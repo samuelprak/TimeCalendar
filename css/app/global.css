@@ -1,0 +1,154 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400);
+
+html{
+    position: relative;
+}
+
+html,
+body{
+  min-height:100%;
+  height:100%;
+}
+
+.first-container{
+  padding-top:20px;
+}
+
+code{
+  border: 1px solid rgb(200, 200, 200);
+}
+
+body {
+  background-color:#f2f8ff;
+  padding-top: 50px;
+  font-family: "Segoe UI", sans-serif;
+  font-size:16px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+  height: initial !important;
+}
+
+.navbar{
+  background-color:#333;
+  background: url('../../img/slide-bg.png');
+}
+
+.side-label {
+  font-size: 14px;
+  font-weight:normal;
+  text-align:left;
+}
+
+#submitformcal{
+  margin-bottom:10px;
+}
+
+.container-calendar{
+  height:100%;
+  min-height:100%;
+}
+
+@media (max-width: 767px) { 
+  .container-calendar{
+    height:120%;
+    min-height:100%;
+  }
+
+  .container-event-type{
+    margin-top:20px;
+  }
+}
+
+input[type="checkbox"], input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.side-label {
+  display: block;
+  position: relative;
+  margin: 10px 0;
+  padding-left: 35px;
+  cursor: pointer;
+}
+
+.side-label::before, .side-label::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.side-label::before {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;  
+}
+
+input:focus + .side-label::before,
+input:checked + .side-label::before {
+  border-color: #5C8452;
+}
+
+.side-label::after {
+  display: none;
+  width: 12px;
+  height: 12px;
+  margin: 4px;
+  background-color: #5C8452;
+}
+
+input:checked + .side-label::after {
+  display: block;
+}
+
+#urlList{
+	margin-top:20px;
+}
+
+#result{
+	padding-top:20px;
+  padding-bottom:200px;
+}
+
+/* CALENDRIER */
+
+#calendar{
+  height:100%;
+  font-size:14px;
+}
+
+#modalGoogle .bg-warning{
+  padding:15px;
+}
+
+/* CALENDAR NAVBAR */
+
+.eif2 span{
+  font-size:12px !important;
+}
+.eif span{
+  font-size:14px;
+}
+
+
+/* ABOUT */
+
+.about p{
+  text-align:justify;
+}
+
+.footer .container{
+  color:#333;
+  height:60px;
+  line-height:60px;
+  text-align:center;
+}
+
+.footer hr{
+  margin:20px 0;
+}

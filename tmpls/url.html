@@ -1,0 +1,15 @@
+<% _.each(group_result, function(group){ %>
+<div class="row" style="margin-top:20px;">
+    <label for="url1" class="col-sm-2 control-label"><%= group.title %></label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="url1" value="<%= group.url %>" readonly>
+    </div>
+</div>
+<% }); %>
+<div style="margin-top:20px;">Vous souhaitez plutôt exporter votre calendrier en utilisant une URL unique ? La voici !</div>
+<div class="row" style="margin-top:20px;">
+    <label for="url1" class="col-sm-2 control-label">URL unique</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="url1" value="<%= unique %>" readonly>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div>
+    <p>
+        <strong>Nom : </strong><br/>
+        <span class="name"><%= event.title %></span>
+    </p>
+    <p>
+        <strong>Date : </strong><br/>
+        <span class="start"><%= event.start.format('dddd D MMMM YYYY [à] H[h](mm)') %></span><br/>
+        <span class="end"><%= event.end.format('dddd D MMMM YYYY [à] H[h](mm)') %></span>
+    </p>
+    <p>
+        <strong>Lieu : </strong><br/>
+        <span class="location"><%= event.location %></span>
+    </p>
+    <p>
+        <strong>Description : </strong><br/>
+        <span class="description"><%= event.description %></span>
+    </p>
+</div>
