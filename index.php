@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function customCIAutoload($classname){
   if(file_exists($file = './class/'.$classname . '.class.php')){
@@ -78,7 +78,6 @@ else{
 </head>
 
 <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">

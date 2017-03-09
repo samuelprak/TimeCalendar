@@ -11,7 +11,7 @@
 
 		<h2>Ajout d'une filière ou d'une université</h2>
 		<p>
-			Si votre filière n'est pas sur le site, et que vous souhaitez pouvoir consulter votre emploi du temps, n'hésitez pas à envoyer un mail à <a href="mailto:timecalendar@samuelprak.fr">timecalendar@samuelprak.fr</a>. 
+			Si votre filière n'est pas sur le site, et que vous souhaitez pouvoir consulter votre emploi du temps, n'hésitez pas à envoyer un mail à <a href="mailto:timecalendar@samuelprak.fr">timecalendar@samuelprak.fr</a>.
 		</p>
 
 		<h2>Technologies utilisées</h2>

@@ -15,7 +15,7 @@
                     <select class="select-app form-control" id="grouplist" data-live-search="true" title="Choisissez..." multiple>
                     </select>
                 </div>
-                
+
                 <div class="row" style="margin-top:10px;">
                     <div class="col-sm-6">
                         <button type="button" id="submitformrel" data-toggle="tooltip" data-placement="bottom" title="Recharger le calendrier" class="btn btn-primary col-xs-12"><i class="fa fa-refresh fa-fw"></i> Recharger
@@ -26,15 +26,15 @@
                         </button>
                     </div>
 
-                </div><!-- 
+                </div><!--
                 <hr>
                 <div>
-                    
+
                     <div class="form-group" style="text-align:justify;">
                         <label for="email">Abonnez-vous !</label><br/>
                         <p style="font-size:14px;">Abonnez-vous pour être au courant des modifications et des suppressions de cours.</p>
-                        
-                        
+
+
                         <div class="input-group" style="margin-top:10px;">
                             <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
                             <input type="email" class="form-control" name="email" id="email" placeholder="Votre email">
@@ -162,7 +162,7 @@
 
     var tmpls_url = null;
     var tmpls_infos = null;
-    
+
 
     var weopt = true;
 
@@ -216,7 +216,7 @@
         else{
             showInfos(tmpls_infos, event);
         }
-        
+
     }
 
     function showInfos(template, event){
@@ -254,8 +254,8 @@
                 updateInfos(event);
                 $("#modalInfos").modal('show');
             },
-            eventRender: function(event, element) { 
-                element.find('.fc-title').append("<div class=\"title-location\"><i class=\"fa fa-map-marker\"></i>" + event.location + "</span>"); 
+            eventRender: function(event, element) {
+                element.find('.fc-title').append("<div class=\"title-location\"><i class=\"fa fa-map-marker\"></i>" + event.location + "</span>");
             },
             height:$(window).height(),
             weekends: showWeekend,
@@ -268,7 +268,7 @@
         });
     }
 
-    $("#submitformrel").click(function(){ 
+    $("#submitformrel").click(function(){
         reloadCalendar();
     });
 
@@ -316,7 +316,7 @@
 
         var tmp = _.template(template);
         $("#urlList").html(tmp({group_result: group_result, unique: generateUrl(data.university, group_result_unique)}));
-        
+
 
         $("#modalGen").modal('show');
     }
@@ -377,7 +377,7 @@
 
             reloadCalendar();
 
-            
+
         });
     });
 </script>

@@ -44,7 +44,7 @@
 
         actualUniversity = "";
         actualGrade = "";
-        
+
         function renderSelect(){
             // Render selectpicker
             $('.select-app').selectpicker('destroy');
@@ -134,4 +134,3 @@
 
 
 </script>
-

@@ -1,5 +1,5 @@
-<?php 
-header('Access-Control-Allow-Origin: *');  
+<?php
+header('Access-Control-Allow-Origin: *');
 header('Content-Type: text/html; charset=utf-8');
 
 date_default_timezone_set("Europe/Paris");
@@ -68,12 +68,10 @@ if(isset($_GET["action"])){
                 $url = $universitymanager->getUnique($_GET["university"])->url();
                 printArrayJSON(["url" => generateUrl($url, $_GET["grouplist"])]);
             }
-        default: 
-    } 
+        default:
+    }
 }
 
 if(!$send){
     printArrayJSON([]);
 }
-
- ?>

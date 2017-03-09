@@ -94,7 +94,7 @@ if(!empty($_POST["university"]) && !empty($_POST["grade"]) && !empty($_POST["gro
 
                     $eventsR = [];
                     $events = $ical->sortEventsWithOrder($ical->events());
-                    foreach($events as $event){ 
+                    foreach($events as $event){
                         if($colormat){ // couleur différentes par événements
                             if(!isset($matieres[$event->summary])){ // la matière n'est pas encore associée à une couleur
                                 $matieres[$event->summary] = $colors[$ct % $nbcolors];
@@ -136,7 +136,7 @@ if(!empty($_POST["university"]) && !empty($_POST["grade"]) && !empty($_POST["gro
                     // Stockage matières
                     file_put_contents($filenameMatieres, json_encode($matieres, JSON_PRETTY_PRINT));
 
-                        
+
                 }
                 catch(Exception $e){
                 }
