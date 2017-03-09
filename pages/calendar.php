@@ -159,6 +159,9 @@
     var actualGroup = getUrlParameter('group');
 
     var data;
+
+    var tmpls_url = null;
+    var tmpls_infos = null;
     
 
     var weopt = true;
@@ -206,11 +209,20 @@
     }
 
     function updateInfos(event){
-        $.get("./tmpls/infos.html", { "_": $.now() }, function(text){
-            var tmp = _.template(text);
-            $(".eif").html(tmp({event: event}));
-            $("#modalInfos .modal-title").html(event.title);
-        });
+        if(tmpls_infos == null){
+            $.get("./tmpls/infos.html", { "_": $.now() }, function(text){ tmpls_infos = text; showInfos(text, event);
+            });
+        }
+        else{
+            showInfos(tmpls_infos, event);
+        }
+        
+    }
+
+    function showInfos(template, event){
+        var tmp = _.template(template);
+        $(".eif").html(tmp({event: event}));
+        $("#modalInfos .modal-title").html(event.title);
     }
 
     function refreshTimeCalendar(showWeekend){
@@ -271,43 +283,42 @@
     });
 
     $("#submitformgen").click(function(){ // generate links
-        var groups = actualGroup.split(",");
-        $.get("./tmpls/url.html", { "_": $.now() }, function(text){
-
-            group_result = [];
-            group_result_unique = [];
-            for(i in data.grouplist){
-                if($.inArray(data.grouplist[i].id, groups) > -1){
-                    var urladd = "";
-
-                    // Ne pas ajouter les calendriers custom dans l'URL unique
-                    if(data.grouplist[i].custom == false){
-                        urladd = generateUrl(data.university, data.grouplist[i].calid);
-
-                        // On ajoute dans l'URL unique
-                        group_result_unique.push(data.grouplist[i].calid);
-                    }
-                    else{
-                        urladd = data.grouplist[i].url;
-                    }
-                    group_result.push({title: data.grouplist[i].name, url: urladd});
-
-                }
-            }
-
-            var tmp = _.template(text);
-            $("#urlList").html(tmp({group_result: group_result, unique: generateUrl(data.university, group_result_unique)}));
-            
-
-            $("#modalGen").modal('show');
-
-        });
+        if(tmpls_url == null){
+            $.get("./tmpls/url.html", { "_": $.now() }, function(text){ tmpls_url = text; generateLinks(text); });
+        }
+        else{
+            generateLinks(tmpls_url);
+        }
     });
 
+    function generateLinks(template){
+        var groups = actualGroup.split(",");
+        group_result = [];
+        group_result_unique = [];
+        for(i in data.grouplist){
+            if($.inArray(data.grouplist[i].id, groups) > -1){
+                var urladd = "";
 
+                // Ne pas ajouter les calendriers custom dans l'URL unique
+                if(data.grouplist[i].custom == false){
+                    urladd = generateUrl(data.university, data.grouplist[i].calid);
 
-    function generateLinks(gradelist){
+                    // On ajoute dans l'URL unique
+                    group_result_unique.push(data.grouplist[i].calid);
+                }
+                else{
+                    urladd = data.grouplist[i].url;
+                }
+                group_result.push({title: data.grouplist[i].name, url: urladd});
 
+            }
+        }
+
+        var tmp = _.template(template);
+        $("#urlList").html(tmp({group_result: group_result, unique: generateUrl(data.university, group_result_unique)}));
+        
+
+        $("#modalGen").modal('show');
     }
 
     function reloadCalendar(){

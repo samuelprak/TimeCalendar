@@ -19,6 +19,9 @@ spl_autoload_register('customCIAutoload');
 
 $send = false;
 
+$colors = ["#FF5C5C","#DEDB2E","#4799C8","#A27AD9","#2CA258","#E3B028","#1FC9AB","#773F3F","#B25998","#8BBA39","#594A7B"];
+$nbcolors = count($colors);
+
 $db = DBFactory::getMysqlConnexionWithPDO();
 $universitymanager = new UniversityManager($db);
 $grademanager = new GradeManager($db);
