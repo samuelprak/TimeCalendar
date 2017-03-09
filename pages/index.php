@@ -1,3 +1,8 @@
+<div class="alert alert-dismissible" id="migration-popup" role="alert" style="text-align:center;background-color:#f19030;color:white;display:none;"> 
+    <button type="button" class="close migration-popup-close" data-dismiss="alert" aria-label="Fermer" style="opacity:0.8;color:white;"><span aria-hidden="true">&times;</span></button>
+    Bonjour ! TimeCalendar a été mis à jour, par conséquent votre URL n'est plus valide 😞 Nous vous invitons à refaire votre sélection ci-dessous, puis à ajouter en favoris le nouveau lien. Merci ! <button data-dismiss="alert" aria-label="Fermer" class="btn btn-sm btn-default migration-popup-close">Fermer</button>
+</div>
+
 <div class="full-bloc starter-template">
     <h1>Accéder à un calendrier</h1>
     <p class="lead">Cet outil est à votre disposition afin d'accéder à votre calendrier universitaire. Il peut aussi générer un lien ICalendar afin d'importer votre calendrier dans votre application de calendrier préférée (Outlook, Google Calendar, iCal ...).</p>
@@ -5,21 +10,21 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
                 <span class="blocEts">
-                    <h3>1. Sélectionner votre établissement</h3>
+                    <h3><i class="fa fa-building" aria-hidden="true"></i> Sélectionner votre établissement</h3>
                     <div class="form-group">
                         <select class="select-app form-control" data-width="100%" id="university" data-live-search="true" title="Choisissez dans la liste...">
                         </select>
                     </div>
                 </span>
                 <span class="blocNiv" style="display:none;">
-                    <h3>2. Sélectionner votre niveau d'études</h3>
+                    <h3><i class="fa fa-book" aria-hidden="true"></i> Sélectionner votre niveau d'études</h3>
                     <div class="form-group">
                         <select class="select-app form-control" data-width="100%" id="grade" data-live-search="true" title="Choisissez dans la liste...">
                         </select>
                     </div>
                 </span>
                 <span class="blocGrp" style="display:none;">
-                    <h3>3. Sélectionner vos groupes</h3>
+                    <h3><i class="fa fa-users" aria-hidden="true"></i> Sélectionner vos groupes</h3>
                     <div class="form-group">
                         <select class="select-app form-control" data-width="100%" id="group" data-live-search="true" title="Choisissez dans la liste..." multiple>
                         </select>
@@ -111,6 +116,16 @@
 
 
         refreshUniversityList();
+
+        // migration
+        if(Cookies.get('popup-migration-v1') !== undefined){
+            $("#migration-popup").show();
+        }
+
+        $(".migration-popup-close").click(function(){
+            Cookies.remove('popup-migration-v1');
+        });
+
 
 
     });

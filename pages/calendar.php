@@ -26,7 +26,24 @@
                         </button>
                     </div>
 
-                </div>
+                </div><!-- 
+                <hr>
+                <div>
+                    
+                    <div class="form-group" style="text-align:justify;">
+                        <label for="email">Abonnez-vous !</label><br/>
+                        <p style="font-size:14px;">Abonnez-vous pour être au courant des modifications et des suppressions de cours.</p>
+                        
+                        
+                        <div class="input-group" style="margin-top:10px;">
+                            <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Votre email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="top" title="S'abonner"><i class="fa fa-paper-plane" ></i></button>
+                            </span>
+                        </div>
+                    </div>
+                </div> -->
                 <hr>
 
                 <div style="font-size:14px;">Passez votre souris ou cliquez sur un événement pour voir les détails.</div>
@@ -131,7 +148,11 @@
 </div><!-- /.modal -->
 
 <script type="text/javascript">
-
+    // migration to the new system
+    if(getUrlParameter('ets') !== undefined){
+        Cookies.set('popup-migration-v1', true, { expires: 365 });
+        redirectIndex();
+    }
 
     var actualUniversity = getUrlParameter('university');
     var actualGrade = getUrlParameter('grade');

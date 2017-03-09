@@ -6,17 +6,17 @@
 
 		<h2>Cache</h2>
 		<p>
-			Par défaut, les plannings sont actualisés toutes les heures. Néanmoins, il est possible de forcer le rafraîchissement en rajoutant à la fin de l'URL de votre calendrier : <code>&forceReload=true</code>.
+			Les plannings sont actualisés toutes les minutes.
 		</p>
 
 		<h2>Ajout d'une filière ou d'une université</h2>
 		<p>
-			Si votre filière n'est pas sur le site, et que vous souhaitez pouvoir consulter votre emploi du temps, n'hésitez pas à envoyer un mail à <a href="mailto:timecalendar@herasus.fr">timecalendar@herasus.fr</a>. 
+			Si votre filière n'est pas sur le site, et que vous souhaitez pouvoir consulter votre emploi du temps, n'hésitez pas à envoyer un mail à <a href="mailto:timecalendar@samuelprak.fr">timecalendar@samuelprak.fr</a>. 
 		</p>
 
 		<h2>Technologies utilisées</h2>
 		<p>
-			La majeure partie du site a été réalisé en Javascript : l'affichage du calendrier ou la génération des URLs se font côté client. La récupération et le traitement des données se font côté serveur en PHP.
+			La majeure partie du site a été réalisé en JavaScript : l'affichage du calendrier ou la génération des URLs se font côté client. La récupération et le traitement des données se font côté serveur en PHP.
 		</p>
 		<ul>
 			<li><a href="https://jquery.com/" target="_blank">jQuery</a>, <a href="http://underscorejs.org/" target="_blank">Underscore</a>, <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3</a></li>

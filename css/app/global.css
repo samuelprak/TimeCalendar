@@ -18,8 +18,13 @@ code{
   border: 1px solid rgb(200, 200, 200);
 }
 
+hr{
+  border-top: 1px solid #bcbcbc;
+}
+
 body {
-  background-color:#f2f8ff;
+  // background-color:#f2f8ff;
+  background-image: url("../../img/background.png");
   padding-top: 50px;
   font-family: "Segoe UI", sans-serif;
   font-size:16px;

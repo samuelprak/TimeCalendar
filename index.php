@@ -115,7 +115,7 @@ else{
     <footer class="footer">
         <hr>
         <div class="container">
-            <p>Site réalisé par <a href="http://www.samuelprak.fr/" target="_blank">Samuel Prak.</a></p>
+            <p>Site réalisé par <a href="http://www.samuelprak.fr/" target="_blank">Samuel Prak</a> - <a href="https://github.com/Herasus/TimeCalendar" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></p>
         </div>
     </footer>
     <script>
