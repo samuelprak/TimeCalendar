@@ -167,13 +167,13 @@
     var weopt = true;
 
     // check if we have parameters
-    if(actualUniversity == undefined || actualGrade == undefined){ // pas d'entrée URL
-        if(Cookies.getJSON('lastCalendar') == undefined){ // Pas de cookie
+    if(actualUniversity === undefined || actualGrade === undefined){ // pas d'entrée URL
+        if(Cookies.getJSON('lastCalendar') === undefined){ // Pas de cookie
             redirectIndex();
         }
         else{
             lastCalendar = Cookies.getJSON('lastCalendar');
-            if(lastCalendar.university != undefined && lastCalendar.grade != undefined && lastCalendar.group != undefined){
+            if(lastCalendar.university !== undefined && lastCalendar.grade !== undefined && lastCalendar.group !== undefined){
                 actualUniversity = lastCalendar.university;
                 actualGrade = lastCalendar.grade;
                 actualGroup = lastCalendar.group;
@@ -209,7 +209,7 @@
     }
 
     function updateInfos(event){
-        if(tmpls_infos == null){
+        if(tmpls_infos === null){
             $.get("./tmpls/infos.html", { "_": $.now() }, function(text){ tmpls_infos = text; showInfos(text, event);
             });
         }
@@ -283,7 +283,7 @@
     });
 
     $("#submitformgen").click(function(){ // generate links
-        if(tmpls_url == null){
+        if(tmpls_url === null){
             $.get("./tmpls/url.html", { "_": $.now() }, function(text){ tmpls_url = text; generateLinks(text); });
         }
         else{
@@ -295,12 +295,12 @@
         var groups = actualGroup.split(",");
         group_result = [];
         group_result_unique = [];
-        for(i in data.grouplist){
+        for(var i in data.grouplist){
             if($.inArray(data.grouplist[i].id, groups) > -1){
                 var urladd = "";
 
                 // Ne pas ajouter les calendriers custom dans l'URL unique
-                if(data.grouplist[i].custom == false){
+                if(data.grouplist[i].custom === false){
                     urladd = generateUrl(data.university, data.grouplist[i].calid);
 
                     // On ajoute dans l'URL unique
@@ -368,14 +368,13 @@
                 weopt = (data.grade.weekend == true);
             }
 
+            refreshTimeCalendar(weopt);
+            reloadCalendar();
+
             // Show next week if grade has no weekend lesson
-            if((moment().day() == 6 || moment().day() == 0) && weopt){
+            if((moment().day() == 6 || moment().day() == 0) && !weopt){
                 $('#calendar').fullCalendar('next');
             }
-
-            refreshTimeCalendar(weopt);
-
-            reloadCalendar();
 
 
         });
