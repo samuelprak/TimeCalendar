@@ -300,7 +300,7 @@
                 var urladd = "";
 
                 // Ne pas ajouter les calendriers custom dans l'URL unique
-                if(data.grouplist[i].custom === false){
+                if(data.grouplist[i].custom == false){
                     urladd = generateUrl(data.university, data.grouplist[i].calid);
 
                     // On ajoute dans l'URL unique
